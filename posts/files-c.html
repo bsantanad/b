@@ -32,9 +32,9 @@
         <h1>files in c</h1>
         <p>
             I've been working in python for so long that I have been spoiled on
-            how easy things are. I had to write a compiler for a class in the
-            last semester of college, and I thought, well, I can do it in C,
-            right? I have not used it in a long way. 
+            how easy things are. I had to write a token detector for a
+            compilers class in the last semester of college, and I thought,
+            well, I can do it in C, right? I have not used it in a long way.
 
             But hey, C is one of those things once you've learned, you'll
             always remember? Right?
@@ -52,7 +52,7 @@
         </p>
 
         <p>
-            I have a massive book 
+            I have a massive book
             <a href="https://www.amazon.com/Primer-Plus-6th-Developers-Library/dp/0321928423">
                 C Primer Plus</a>
 
@@ -87,7 +87,7 @@
 #include&lt;stdio.h&gt;
 #include&lt;stdlib.h&gt;
 
-int 
+int
 main(int argc, char *argv[])
 {
         char *prog = argv[0];  /** program name for errors **/
@@ -125,7 +125,7 @@ main(int argc, char *argv[])
         <code>*argv[]</code>, which is an array of strings with all the args
         you passed after the binary name.  <code>argv[0]</code> is the name
         of the actual binary. So first, iwe check if the user sent at least two
-        params (the binary name and a filename). 
+        params (the binary name and a filename).
     </p>
 
     <p>
@@ -134,7 +134,7 @@ main(int argc, char *argv[])
         args: the filename and how you want to open the file. Since we want to
         read it we used <code>r</code>, but you can also use <code>w</code> for
         writing, <code>a</code> for appending something to the file. If you
-        want to see all the options go 
+        want to see all the options go
         <a href="https://man7.org/linux/man-pages/man3/fopen.3.html#top_of_page">here</a>,
         or do <code>man fopen</code> in a unix machine.
     </p>
@@ -155,7 +155,7 @@ main(int argc, char *argv[])
         those are files also). We do the <code>getc</code> until we get the
         <code>EOF</code> character, this will tell us that the file has ended, so
         we need to stop.
-        
+
     </p>
 
     <p>
@@ -178,7 +178,7 @@ main(int argc, char *argv[])
         char *prog = argv[0]; /** program name for error **/
 
         char c;
-        FILE *fp; 
+        FILE *fp;
 
         if (argc &lt; 2){
                 printf(&quot;%s: you need to pass at least one file to cat \n&quot;,
@@ -186,9 +186,9 @@ main(int argc, char *argv[])
                 exit(-1);
         }
 
-        /** we need to move the argv array by one, since we dont want to print 
+        /** we need to move the argv array by one, since we dont want to print
          * the binary program, argv[0] = prog (the actual binary) **/
-        *argv++; 
+        *argv++;
 
         while(argc-- &gt; 1){
             if ((fp = fopen(*argv++, &quot;r&quot;)) == NULL) {
